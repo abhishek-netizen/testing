@@ -1,5 +1,6 @@
 # Welcome to JavaScript.
 
+# Day-1
 ## How JavaScript Works & Execution Context:
 [Namaste JavaScript Ep.1](https://youtu.be/ZvbzSrg0afE) <br />
 Everything in javascript happens inside a **Execution Context**: <br />
@@ -12,5 +13,5 @@ single threaded means it only executes one line at a time, syncronous single thr
 
 [IMAGE YET TO COME]
 
-Learn more about JS how does it works internally 👉 [JavaScript Internals](https://medium.com/@bdov_/javascript-typescript-execution-vs-lexical-vs-variable-environment-37ff3f264831)
+Learn more about JS how does it works internally 👉 [JavaScript Internals](https://medium.com/@bdov_/javascript-typescript-execution-vs-lexical-vs-variable-environment-37ff3f264831) must read!!! tc of flaws in the article
 
