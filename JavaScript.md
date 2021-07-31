@@ -113,6 +113,8 @@ and then when ```local execution context - E1``` is created or a function is env
 and when the E1 done with its job(in this case return ans) its popped out, and  the control goes to the GEC ```Global Excecution context``` where its left off in our case it is var square(2) <br/>
 same goes with ```local execution context - E2``` .
 
+***Call stack maintains the order of excecution of excecution contexts***
+
 
  
 
