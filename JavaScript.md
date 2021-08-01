@@ -116,6 +116,127 @@ same goes with ```local execution context - E2``` .
 ***Call stack maintains the order of excecution of excecution contexts***
 
 
+# Day-3
+## Hoisting in JavaScript (variables & functions):
+[Namaste JavaScript Ep. 3](https://youtu.be/Fnlnw8uY6jo) <br />
+```
+var x = 7;
+
+function getName(){
+console.log("Namaste JS")
+}
+getName();
+console.log(x);
+```
+what is the output of above code ..?  <br/>
+Namaste JS <br/>
+7  ???  <br/>    Yep.
+
+
+```
+getName();
+console.log(x);
+
+var x = 7;
+
+function getName(){
+console.log("Namaste JS")
+}
+
+```
+How about now ??? <br/> [REF1]
+lemme guess what you are thinking <br/>
+we are envoking a function before declaring it <br/>
+and, we are accessing the x before initializing it <br/>
+so output is ERROR!! ??<br/>
+![easy peasy](https://media.giphy.com/media/WUay9BLLngVU3zs95c/giphy.gif) <br/>
+Wait... <br/>
+you are thinking the same way as python thinking?? 😂, but It is => JavaScript guys. <br/>
+
+lets see the output <br/>
+```Namaste Javascript``` <br/>
+``` Undefined ``` <br/>
+but why is that ?? <br/>
+why the function envoke printed Namaste JS and why console.log(x) printed Undefined ??  <br/>
+ok lets make some small modification in the program <br/>
+
+```
+getName();
+console.log(x);
+
+//deleted here var x = 7;
+
+function getName(){
+console.log("Namaste JS")
+}
+
+```
+So whats the ouput now ??? <br/>
+its  <br/>
+```Error!!``` <br/>
+WTH why is that <br/>
+Before its Undefined and now Error!!  why is that?? <br/>
+Drag your  ```Day - 2 conecpts ``` from your global memory( i mean from your brain) <br/>
+else refer the video mentioned in day 3 link from 6:10 <br/>
+
+so what is **Hoisting** any way?? <br/>
+Hoisting is a phenomenon in JS, where we can access the variables and functions even before initializing it. <br/>
+that is the reason our prediction failed in the first phase [REF1()] <br/>
+
+so now we understood whenever we try to run our program a ```Global Excecution GEC ``` is created and pused to the bottom of callstack <br/>
+its created in two phase memory allocation and excecution phase <br/>
+in memory allocation it reserve memory for all the variables and funxtions <br/>
+for variable before excecution it will store undefined and for functions it will store complete functions <br/>
+suppose if the function is envoked again it creates a ```Local execution context ``` and push on the top of GEC on callstack, <br/>
+once its done control moves to GEC <br/>
+same thing as ```Day2```
+
+at last lets take a look at two type of functions syntax and its output by keeping Hoisting in mind <br/>
+
+```
+console.log(x)
+getName()
+
+var x = 7;
+
+function getName(){
+console.log("Namaste JS")
+}
+```
+we already knew this output its undefined and a function itself<br/>
+
+```
+console.log(x)
+getName()
+
+var x = 7;
+
+var getName = () => {
+console.log("Namaste JS")
+}
+```
+so what if the function is an arrow ?? <br/>
+now the output became undefined and undefined <br/>
+because we are storing the function to a variable <br/>
+so the variables are treated as undefined by our ```Global excecution context``` <br/>
+
+# Day-4
+## How functions work in JS  & Variable Environment :
+[Namaste JavaScript Ep. 4](https://youtu.be/gSDncyuGw0s) <br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 
    
