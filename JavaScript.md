@@ -224,9 +224,46 @@ so the variables are treated as undefined by our ```Global excecution context```
 ## How functions work in JS  & Variable Environment :
 [Namaste JavaScript Ep. 4](https://youtu.be/gSDncyuGw0s) <br />
 
+lets understand how this code works
+```
+1 var x = 1;
+2 a()
+3 b()
+4 console.log(x)
 
+5 function a(){
+6  var x = 10;
+7  console.log(x)
+8  }
 
+11 function b(){
+12  var x = 100;
+13  console.log(x)
+14 }
 
+```
+what was the output of this function ? <br/>
+10 <br/>
+100 <br/>
+1 <br/>  but why 10 100 then 1 ??? <br/>
+
+1. before code execution our  ```Global execution context``` will start & pushed to the bottom of callstack<br/>
+2. it allocates memory for variables and takes snapshot of functions bla bla <br/>
+3. lets take a look at only code execution <br/>
+4. initally we have x:undefined and we have code snapshots of  functions a() & b() <br/>
+5. when it moves to line 2, it has to envoke a function a()
+6. again ```local execution context ``` and pushed to callStack, initially x is undefined, <br/>
+ but then it will looks x value inside the function a() only, Scope-man-Scope 😎 <br/>
+7. and when func a() is done  ```local execution context ``` is pop off from the callStack, <br/>
+and control moves to the GEC again, so now it moves to line 3 and envoke func b() <br/>
+8. same procedure for func b() <br/>
+9. when func b() is done the control moves to line 3 where it left off <br/>
+10. when 4th line executes the console.log(x), it fetch from the local memory of GEC. Scope-man-Scope 😎 <br/>
+11. when everything done, GEC is popped off, and we are done, and we can watch next video of NJS lol <br/>
+
+# Day-5
+## SHORTEST JS Program Window & this keyword :
+[Namaste JavaScript Ep. 5](https://youtu.be/QCRpVw2KXf8) <br />
 
 
 
