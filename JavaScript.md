@@ -280,15 +280,20 @@ open your dev tools  <br/>
 go to source and click on index.js(the empty file, shortest program we ever knew of :) <br/>
 lets add breaking point to the very first line of our empty index.js, and run the script by pressing ctrl+enter <br/>
 
+![outputone](./screenshotone.png)
 
 
 now what we saw in the scope section ?,  we saw a **Global keyword**, but why ?? <br/>
 
 lets discuss .. <br/>
 
-1. eventhough its an empty file our JS does its job, and the job is creating a ```Global executing context ``` && allocating the memory to it <br/>
-2. 
-
+1. eventhough its an empty file our JS engine does its job,  <br/>
+and the job is creating a ```Global executing context ``` && allocating the memory to it, even though the index.js is empty <br/>
+2. and also something interesting will happens here, JS engine will create something called as **Window** <br/>
+3. Goto console and type window, you will get lot of objects created by JS engine. but what is it ??? <br/>
+![output of window](./screenshottwo.png)
+5. 
+ 
 
 
 
