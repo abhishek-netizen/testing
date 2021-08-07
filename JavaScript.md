@@ -264,6 +264,30 @@ and control moves to the GEC again, so now it moves to line 3 and envoke func b(
 # Day-5
 ## SHORTEST JS Program Window & this keyword :
 [Namaste JavaScript Ep. 5](https://youtu.be/QCRpVw2KXf8) <br />
+I think this is the video i enjoyed the most, till here <br/>
+I always love 'this' even though i never understood how it works, what a pity!! <br/>
+but now i think i got a little intro on it <br/>
+so .... <br/>
+lets begin. <br/>
+
+what is the shortest program out-there ?? **its => JS** <br/>
+lets test the above statement <br/>
+create an empty folder open that on vscode <br/>
+create a index.html and link our empty endex.js to it <br/>
+then use vscode live server(click on icon on right side bottom of vscode or press f1) <br/>
+now you are seeing your html linked to js on your default browser <br/>
+open your dev tools  <br/>
+go to source and click on index.js(the empty file, shortest program we ever knew of :) <br/>
+lets add breaking point to the very first line of our empty index.js, and run the script by pressing ctrl+enter <br/>
+
+
+
+now what we saw in the scope section ?,  we saw a **Global keyword**, but why ?? <br/>
+
+lets discuss .. <br/>
+
+1. eventhough its an empty file our JS does its job, and the job is creating a ```Global executing context ``` && allocating the memory to it <br/>
+2. 
 
 
 
