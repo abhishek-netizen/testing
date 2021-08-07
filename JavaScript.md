@@ -295,7 +295,7 @@ and the job is creating a ```Global executing context ``` && allocating the memo
 5. these functions and objects that we are seeing in window.is created by our ***JS-engine*** and we can access it anyware in our program. <br/>
 6. window is a **global object** created by js-engine along with GEC <br/>
 7. and just like window, JS-engine also create something called as **this** 😨 haha (created along with GEC) <br/>
-8. incase of  browsers **global object** is called as window, but we know js notonly runs on browsers, but wherever js is running it must create a **global object**<br/>
+8. incase of  browsers **global object** is called as window, but we know js not only runs on browsers, but wherever js is running it must create a **global object**<br/>
 9. and wherever js is running it must have engine to it, incase of chrome its v8, incase or react native & in safari it is javascriptCore etc.. <br/> 
 10. and these engines have a responsibility to create **global object** <br/>
 11. lets go back to point 7, <br/>
@@ -307,17 +307,36 @@ this === window
 <br/>
 at the global scope(i am using scope word, & i dont know its the correct one). this refers to the window object <br/>
 12. so how global scope is affecting our window object(global object incase of browsers)?, lets test that <br/>
+
 ```
 var a = 10;
 var b = 20;
 function local(){
-//you will never find me in window 😥
-var c = 1000;
+var c = 100; //you will never find me in window 😞 
 }
+```
+
+<br/>
+so if we type window in console and search for a & b variable we will get both, but we will not find variable c why is that? <br/>
+
+![windowop](./screenshotthree.png)
+
+<br/>
+13. because window is global, i think it will only looks for global scope (🤔 i think), but our beloved variable c became local scope <br/>
+14. keeping all this in mind :: <br/>
+```
+var a = 10;
+var b = 20;
+function local(){
+var c = 100; //you will never find me in window 😞 
+}
+console.log(window.a) //output 10
+console.log(a) //outputs 10, if we dont put anything infront of it, it always assumes as global
+console.log(c) //error!! sorry man  c is not defined, you will not find that because i am a global
+console.log(this.a) //ouputs 10 go back to point num : 7 & 11
 
 ```
-so if type window in console and search for a & b variable we will get both, but we will not find variable c why is that? <br/>
-13. because window is global, i think it will only looks for global scope (🤔 i think), but our beloved variable c became local scope <br/>
+
 
 
 
