@@ -324,21 +324,24 @@ so if we type window in console and search for a & b variable we will get both, 
 <br/>
 13. because window is global, i think it will only looks for global scope (🤔 i think), but our beloved variable c became local scope <br/>
 14. keeping all this in mind :: <br/>
+
 ```
+
 var a = 10;
 var b = 20;
 function local(){
 var c = 100; //you will never find me in window 😞 
 }
-console.log(window.a) //output 10
-console.log(a) //outputs 10, if we dont put anything infront of it, it always assumes as global
-console.log(c) //error!! sorry man  c is not defined, you will not find that because i am a global
+console.log(window.a); //output 10
+console.log(a); //outputs 10, if we dont put anything infront of it, it always assumes as global
+console.log(c); //error!! sorry man  c is not defined, you will not find that because i am a global
 console.log(this.a) //ouputs 10 go back to point num : 7 & 11
 
 ```
 
-
-
+# Day-6
+## undefined vs not defined in JS :
+[Namaste JavaScript Ep. 6](https://youtu.be/B7iF6G3EyIk) <br />
 
 
 
