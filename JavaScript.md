@@ -289,12 +289,35 @@ lets discuss .. <br/>
 
 1. eventhough its an empty file our JS engine does its job,  <br/>
 and the job is creating a ```Global executing context ``` && allocating the memory to it, even though the index.js is empty <br/>
-2. and also something interesting will happens here, JS engine will create something called as **Window** <br/>
-3. Goto console and type window, you will get lot of objects created by JS engine. but what is it ??? <br/>
-![output of window](./screenshottwo.png)
-5. 
- 
+2. and also something interesting will happens here, JS engine will create something called as **Window** (created along with GEC) <br/>
+3. Goto console and type window, you will get lot of objects & func's, created by JS engine. but what is it ??? <br/>
+![output of window](./outputwindow.png)
+5. these functions and objects that we are seeing in window.is created by our ***JS-engine*** and we can access it anyware in our program. <br/>
+6. window is a **global object** created by js-engine along with GEC <br/>
+7. and just like window, JS-engine also create something called as **this** 😨 haha (created along with GEC) <br/>
+8. incase of  browsers **global object** is called as window, but we know js notonly runs on browsers, but wherever js is running it must create a **global object**<br/>
+9. and wherever js is running it must have engine to it, incase of chrome its v8, incase or react native & in safari it is javascriptCore etc.. <br/> 
+10. and these engines have a responsibility to create **global object** <br/>
+11. lets go back to point 7, <br/>
+```
+//at the global level
+this === window
+//output : true
+```
+<br/>
+at the global scope(i am using scope word, & i dont know its the correct one). this refers to the window object <br/>
+12. so how global scope is affecting our window object(global object incase of browsers)?, lets test that <br/>
+```
+var a = 10;
+var b = 20;
+function local(){
+//you will never find me in window 😥
+var c = 1000;
+}
 
+```
+so if type window in console and search for a & b variable we will get both, but we will not find variable c why is that? <br/>
+13. because window is global, i think it will only looks for global scope (🤔 i think), but our beloved variable c became local scope <br/>
 
 
 
